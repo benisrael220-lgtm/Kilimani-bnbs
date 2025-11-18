@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Kilimani & Ngong Road BnBs</title>
+  <style>
+    body{
+      margin:0;
+      font-family:-apple-system,system-ui,Segoe UI,Roboto,Arial;
+      background:#fafafa;
+      color:#222;
+    }
+    .wrap{
+      max-width:900px;
+      margin:0 auto;
+      padding:16px;
+    }
+    header{
+      background:#ffffff;
+      border-bottom:1px solid #eee;
+      margin-bottom:16px;
+    }
+    header h1{
+      margin:8px 0;
+      font-size:22px;
+    }
+    header p{
+      margin:0 0 10px;
+      color:#666;
+      font-size:14px;
+    }
+    .listings{
+      display:grid;
+      grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+      gap:12px;
+      margin-bottom:20px;
+    }
+    .card{
+      background:#fff;
+      border-radius:8px;
+      border:1px solid #eee;
+      padding:10px;
+      font-size:14px;
+    }
+    .card h3{
+      margin:0 0 4px;
+      font-size:16px;
+    }
+    .price{
+      font-weight:bold;
+      margin-bottom:4px;
+    }
+    .area{
+      color:#666;
+      margin-bottom:6px;
+      font-size:13px;
+    }
+    .contact-box{
+      background:#fff;
+      border-radius:8px;
+      border:1px solid #eee;
+      padding:12px;
+      margin-bottom:10px;
+    }
+    .pay-number{
+      font-size:20px;
+      font-weight:bold;
+      letter-spacing:0.04em;
+    }
+    .btn-row{
+      margin-top:8px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    button,a.btn{
+      padding:8px 10px;
+      border-radius:6px;
+      border:1px solid #ddd;
+      background:#fff;
+      font-size:14px;
+      text-decoration:none;
+      color:#222;
+      cursor:pointer;
+    }
+    a.btn-whatsapp{
+      border-color:#25d366;
+    }
+    footer{
+      text-align:center;
+      font-size:12px;
+      color:#777;
+      margin:16px 0 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <h1>Kilimani & Ngong Road BnBs</h1>
+      <p>Furnished BnBs between <strong>5,000–10,000 KES</strong> per night.</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="listings">
+      <div class="card">
+        <h3>KIL001 · Kilimani Studio</h3>
+        <div class="price">KES 5,000 / night</div>
+        <div class="area">Kilimani · near Yaya</div>
+        <p>Cozy studio, Wi-Fi, self check-in. Ideal for one or two guests.</p>
+      </div>
+      <div class="card">
+        <h3>KIL002 · 1BR Kilimani Guesthouse</h3>
+        <div class="price">KES 8,000 / night</div>
+        <div class="area">Kilimani</div>
+        <p>1 bedroom guesthouse in a quiet compound with parking.</p>
+      </div>
+      <div class="card">
+        <h3>NGO001 · Ngong Road Room</h3>
+        <div class="price">KES 6,000 / night</div>
+        <div class="area">Ngong Road · near Prestige Plaza</div>
+        <p>Private room, Wi-Fi, easy access to malls and CBD.</p>
+      </div>
+      <div class="card">
+        <h3>NGO002 · Ngong Road 2-Bed</h3>
+        <div class="price">KES 10,000 / night</div>
+        <div class="area">Ngong Road</div>
+        <p>Two-bed furnished apartment, great for small groups.</p>
+      </div>
+    </section>
+
+    <section class="contact-box">
+      <h2 style="margin-top:0;font-size:18px;">How to Book & Pay</h2>
+      <p>1. Choose a listing (e.g. <strong>KIL001</strong>).</p>
+      <p>2. Pay with M-Pesa to this number:</p>
+      <p class="pay-number">0741762047</p>
+      <div class="btn-row">
+        <button type="button" id="copyBtn">Copy number</button>
+        <a class="btn btn-whatsapp"
+           href="https://wa.me/254741762047?text=Hi%2C%20I%20want%20to%20book%20a%20BnB.%20Listing%20ID%3A%20"
+           target="_blank" rel="noopener">
+          Chat on WhatsApp
+        </a>
+      </div>
+      <p style="margin-top:10px;font-size:13px;color:#666;">
+        After payment, send on WhatsApp: your name, listing ID, dates and number of guests.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    Demo BnB site · Payments via M-Pesa to 0741762047
+  </footer>
+
+  <script>
+    // Copy number button
+    document.getElementById("copyBtn").addEventListener("click", function () {
+      const num = "0741762047";
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(num)
+          .then(() => alert("Number copied: " + num))
+          .catch(() => alert("Payment number: " + num));
+      } else {
+        alert("Payment number: " + num);
+      }
+    });
+  </script>
+</body>
+</html>
